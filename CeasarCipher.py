@@ -1,15 +1,19 @@
-def Caesar_cipher(pt):
+def Caesar_cipher(pt,shift):
     ct = ""
 
     for i in range(len(pt)):
         character = pt[i]
-        ciphered = chr(ord(character) + 3)
+        ciphered = chr(ord(character) + shift)
         ct = ct + ciphered
 
 
     return ct
 
 
-input = input()
-print(Caesar_cipher(input))
+plaintext = input("Input your plaintext - ")
+shift = int(input("Enter the shift"))
+
+output = Caesar_cipher(plaintext,shift)
     
+
+print(f"This is the ciphertext: {output}")
